@@ -25,7 +25,10 @@ public class Controller {
     private URL location;
 
     @FXML
-    private TextField textField;
+    private MyTextField textField;
+
+    @FXML
+    private TextField textField1;
 
     @FXML
     private Button btn;
@@ -33,7 +36,6 @@ public class Controller {
     @FXML
     private Label label;
 
-    private Clipboard systemClipboard;
 
     @FXML
     void initialize() throws IOException {
@@ -44,25 +46,14 @@ public class Controller {
         btn.setOnAction(actionEvent -> label.setText(textField.getText()));
 
 
-        // todo в констукторе наследника textField
-
-        CustomContextMenu customContextMenu = new CustomContextMenu(textField);
-        CustomContextMenu customContextMenuEmpty = new CustomContextMenu();
-
-        textField.setContextMenu(customContextMenuEmpty);
-
-
-        textField.setOnMouseClicked(actionEvent -> {
-            systemClipboard = Clipboard.getSystemClipboard();
-            if (!textField.getText().isEmpty() || systemClipboard.hasString()) {
-                textField.setContextMenu(customContextMenu);
-            } else {
-                textField.setContextMenu(customContextMenuEmpty);
+        textField1.setTextFormatter(new TextFormatter<String>(change -> {
+            if (change.isContentChange()) {
+                String newText = change.getControlNewText();
+                if (!newText.matches("^\\d{0,4}$")) {
+                    return null;
+                }
             }
-        });
-
-        // todo и сделать поле для паттерна и геттер для него. и если в геттер вызван то регулрка проверяет ввод
-
-
+            return change;
+        }));
     }
 }
