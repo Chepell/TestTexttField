@@ -20,7 +20,8 @@ public class Main extends Application {
 
         primaryStage.setTitle("Hello World");
         Scene scene = new Scene(root);
-//        scene.getStylesheets().add("stylecheet.css");
+        // подключение файла с css
+        scene.getStylesheets().add("Button.css");
         primaryStage.setScene(scene);
         primaryStage.show();
 

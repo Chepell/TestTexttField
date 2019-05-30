@@ -1,0 +1,39 @@
+/*#transitionBtn {*/
+    /*-fx-background-radius: 20px;*/
+    /*-fx-font: 13px 'Open Sans';*/
+    /*-fx-min-width: 40px;*/
+    /*-fx-min-height: 40px;*/
+/*}*/
+
+.scene {
+    -fx-background-color: white;
+}
+
+.transition-button {
+    -fx-background-radius: 20px;
+    -fx-background-color: rgba(84, 84, 84, 0.29);
+    -fx-font: normal 13px 'Open Sans';
+    -fx-text-fill: white;
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+    -fx-label-padding: -13px 0px 0px 0px;
+    /*-fx-box-shadow: 0px 2px 13px 0 rgba(84, 84, 84, 0.29);*/
+}
+
+.transition-button-count {
+    -fx-background-radius: 20px;
+    -fx-background-color: #2fc5ac;
+    -fx-font: normal 13px 'Open Sans';
+    -fx-text-fill: white;
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+    -fx-label-padding: -13px 0px 0px 0px;
+    /*-fx-box-shadow: 0px 2px 13px 0 rgba(84, 84, 84, 0.29);*/
+}
+
+.circle{
+    -fx-background-radius: 25;
+    -fx-pref-width: 50;
+    -fx-pref-height: 50;
+    -fx-background-color: green;
+}

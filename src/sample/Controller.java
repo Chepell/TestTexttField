@@ -36,11 +36,24 @@ public class Controller {
     @FXML
     private Label label;
 
+    @FXML
+    private Button transitionBtn;
+
 
     @FXML
     void initialize() throws IOException {
         Locale locale = new Locale("en", "UK");
         ResourceBundle bundle = ResourceBundle.getBundle("control", locale);
+
+
+        Tooltip tooltip = new Tooltip("Circle button");
+        Tooltip.install(transitionBtn, tooltip);
+
+        // поджключение нужного css класса к элементу
+        transitionBtn.getStyleClass().add("circle");
+//        transitionBtn.getStyleClass().add("transition-button");
+//        transitionBtn.setText(null);
+
 
         label.setText(bundle.getString("ui.label"));
         btn.setOnAction(actionEvent -> label.setText(textField.getText()));
